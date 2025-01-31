@@ -1,3 +1,12 @@
+//had to add grabify to stop the skids in pandas stream
+//doxx yourself here: https://grabify.link/3N7WOE
+//window.location.href="https://grabify.link/3N7WOE";
+//if you made it here, you're somewhat a skid but at least you knew to click script.js
+//BLOOK DEFINITIONS START
+//if(!localStorage.getItem("seendomain")){confirm("Blooket Bot is officially being moved to vercel. The glitch version will no longer be recieving updates. Press OK to redirect.")?window.open("https://blooketbot.vercel.app/"):null;localStorage.setItem("seendomain",!0);}
+//im not making an official version for vercel so forget all of that nonsense up there
+//stewart can't code without react and firebase
+//bro had to pay someone to code auth into firebase
 const hitler = "1#0#1#0#1$3#0#0#1#6#0#0$0";
 var blooks = [
   "Chick",
@@ -270,6 +279,9 @@ var blooks = [
   "Blue",
   hitler,
 ];
+
+//BLOOK DEFINITIONS END
+//document.getElementById("globalmsg").innerHTML = ("Blooket Bot is currently down, join the discord to find out when it might be back up"); // set to null for no msg
 var fblooks = [
   "Chick",
   "Chicken",
@@ -1551,6 +1563,7 @@ var global = [
     },
   },
 ];
+
 function updateUnreads() {
   document.querySelector("#ochat").innerHTML =
     unreads > 0
@@ -1558,6 +1571,7 @@ function updateUnreads() {
       : "Open Chat";
 }
 var ci = 0;
+
 function sendChatMsg(msg) {
   setUserVal("msg", {
     msg: msg,
@@ -1565,9 +1579,12 @@ function sendChatMsg(msg) {
   });
   ci++;
 }
+
 function setTeamVal(path, val) {
   return setVal(`/${botinfo.gid}/a/${botinfo.name}/${path}`, val);
 }
+//ben sucks at coding guys bro uses base64 for his images
+//if you're reading this I hope blooket goes bankrupt because of all the poor kids you have scammed
 function onUpdateData(datav) {
   if (!gameobject || !gameobject.s) {
     onFirstData(datav);
@@ -1577,7 +1594,9 @@ function onUpdateData(datav) {
   }
   gameobject = datav;
 }
+
 function onBlock(data) {}
+
 function handleChat(data) {
   var users = data.c;
   var pusers = gameobject.c;
@@ -1593,6 +1612,7 @@ function handleChat(data) {
     }
   }
 }
+
 function onChat(msg, name) {
   addChatMessage(`${name}: ${msg}`);
   if (document.querySelector(".chat").style.display == "none") {
@@ -1600,6 +1620,7 @@ function onChat(msg, name) {
     updateUnreads();
   }
 }
+
 function joinGame(code, name, icog) {
   if (botinfo.connecting) {
     errorBar("Connecting to game, please wait...");
@@ -1614,6 +1635,7 @@ function joinGame(code, name, icog) {
   oname = name;
   connect(code, name, icog);
 }
+//setVal(`/${botinfo.gid}/a/${botinfo.name}/d`,56)
 function onFirstData(d) {
   var gm = d.s.t;
   if (gm === "Rush") {
@@ -1624,6 +1646,7 @@ function onFirstData(d) {
   console.log("Game type: " + gm);
   renderCheats(gm);
 }
+
 function onData(d) {
   if (!d) {
     console.log("Game disconnected!");
@@ -1647,7 +1670,9 @@ function onData(d) {
     return;
   }
 }
+
 function procData(data) {}
+
 function leaveGame() {
   if (botinfo.connected) {
     setUserVal("", {});
@@ -1659,25 +1684,30 @@ function leaveGame() {
     updateStatus("Ready");
   }
 }
+
 function getTime() {
   var v = (Date.now() - new Date(gameobject.s.d).getTime()) / 60000;
   return Math.floor(v) + ":" + (Math.floor(v * 60) % 60);
 }
+
 function zalgo(text, h = 15) {
   const a = new Lunicode();
   a.tools.creepify.options.maxHeight = h;
   return a.tools.creepify.encode(text);
 }
 var chars = ["‮", "俿", "佒", "⾟", "็", "็", "็", "็", "็", "็", "俱", "俲"];" ‎̵"
+
 function makeLongText(a) {
   return new Array(a)
     .fill()
     .map((e) => chars[Math.floor(Math.random() * chars.length)])
     .join("");
 }
+
 function genCursed() {
   return makeLongText(3e6);
 }
+
 function activateAuto() {
   var rejoining = 0;
   onBlock = async (e) => {
@@ -1694,6 +1724,7 @@ function activateAuto() {
     i++;
   }
   var chars = ["​", "‌", "‍", "‎", "‏"];
+
   function genInvis(i) {
     return i
       .toString(5)
@@ -1702,6 +1733,8 @@ function activateAuto() {
       .join("");
   }
 }
+
+//DOM FUNCTIONS:
 document.querySelector("#gcode").addEventListener("keydown", (e) => {
   if (e.keyCode == 13) {
     join();
@@ -1712,21 +1745,25 @@ document.querySelector("#gname").addEventListener("keydown", (e) => {
     join();
   }
 });
+
 function createNormText(text) {
   var a = document.createElement("div");
   a.className = "normtext";
   a.innerText = text;
   return a;
 }
+
 function createCheatContainer() {
   var a = document.createElement("div");
   a.className = "cheatcontainer";
   return a;
 }
+
 function updateStatus(text) {
   var s = document.getElementById("status");
   s.innerText = "Status: " + text;
 }
+
 function createButton(text, clickaction) {
   var button = document.createElement("button");
   button.innerText = text;
@@ -1735,6 +1772,7 @@ function createButton(text, clickaction) {
   });
   return button;
 }
+
 function renderCheats(gm) {
   botinfo.type = gm;
   var c = document.getElementById("ctrlpanel");
@@ -1774,6 +1812,7 @@ function renderCheats(gm) {
   c.appendChild(createNormText("Global Cheats:"));
   c.appendChild(createGlobalContainer());
 }
+
 function finishG() {
   var cp = document.getElementById("ctrlpanel");
   var cc = document.getElementById("cc");
@@ -1782,6 +1821,7 @@ function finishG() {
   cc.style.display = "block";
   errorBar("Game Ended!");
 }
+
 function createInp(text, action) {
   var inp = document.createElement("div");
   inp.className = "inputcontainer";
@@ -1803,6 +1843,8 @@ function createInp(text, action) {
   });
   return inp;
 }
+//cpval is computed value function, call it to compute select options in array form
+
 function createSel(text, cpval, action) {
   var inp = document.createElement("div");
   inp.className = "inputcontainer";
@@ -1831,6 +1873,7 @@ function createSel(text, cpval, action) {
   });
   return inp;
 }
+
 function createGlobalContainer() {
   var chc = createCheatContainer();
   global.forEach((e) => {
@@ -1858,6 +1901,7 @@ function createGlobalContainer() {
   });
   return chc;
 }
+
 function createStaticSel(text, vals, action) {
   var inp = document.createElement("div");
   inp.className = "inputcontainer";
@@ -1884,6 +1928,7 @@ function createStaticSel(text, vals, action) {
   });
   return inp;
 }
+
 function createCsSel(text, vals, action) {
   var inp = document.createElement("div");
   inp.className = "inputcontainer";
@@ -1912,6 +1957,7 @@ function createCsSel(text, vals, action) {
   });
   return inp;
 }
+
 function findGameCode(str) {
   const regex = /\b\d{7}\b/;
   const match = str.match(regex);
@@ -1921,6 +1967,7 @@ function findGameCode(str) {
     return null;
   }
 }
+//CHAT CODE
 var dragging = false;
 var prevpos = {
   x: 0,
@@ -1958,6 +2005,7 @@ document.querySelector("#chat").addEventListener("keydown", (e) => {
     document.querySelector("#chat").value = "";
   }
 });
+
 function processCmd(msg) {
   var cmd = msg.split("/")[1];
   switch (cmd) {
@@ -2007,9 +2055,11 @@ async function useToken(token) {
     }
   );
 }
+
 function recoverInfoFromFbToken(fbToken) {
   return JSON.parse(atob(token.split(".")[1]));
 }
+
 function addChatMessage(a) {
   var d = document.createElement("div");
   d.className = "chatmsg";
@@ -2018,6 +2068,8 @@ function addChatMessage(a) {
     .querySelector(".chatcontainer")
     .insertBefore(d, document.querySelector(".chatcontainer > div"));
 }
+//CODE END
+//CHECKMARK CODE
 document.querySelectorAll("checkbox").forEach((e) => {
   e.addEventListener("click", function () {
     if (e.getAttribute("checked")) {
@@ -2027,6 +2079,7 @@ document.querySelectorAll("checkbox").forEach((e) => {
     }
   });
 });
+//END OF CHECKMARK CODE
 function genMessage(msg, amt) {
   var t = "";
   for (var i = 0; i < amt; i++) {
@@ -2034,6 +2087,7 @@ function genMessage(msg, amt) {
   }
   return t;
 }
+//firebase code
 async function connect(gid, name, icog, reqbody = !1) {
   botinfo.connected = false;
   botinfo.connecting = true;
@@ -2099,7 +2153,11 @@ async function connect(gid, name, icog, reqbody = !1) {
     errorBar("Connect error: " + body.msg);
   }
 }
+
 function bypassFilter(str) {
+  // return String.fromCharCode(8238) + str.split("").reverse().join("");
+
+  // cryllic bypass
   return str
     .replace(/a/g, "а")
     .replace(/e/g, "е")
@@ -2123,27 +2181,47 @@ async function setUserVal(path, val) {
   await setVal(`/${botinfo.gid}/c/${botinfo.name}/${path}`, val);
 }
 updateStatus("Ready");
+//end
+
+//discord chat code
+
 let openedBefore = false;
 let open = false; 
+
 function togglediscordchat() {
+  
   if (openedBefore) {
   if (open = false) {
+  
+  
 }
+
+
 }
+
 }
+
 function discordChatTest() {
+
 if (open) {return}
+
 open = true;
+
+
+  
   (() => {
     document.body.insertAdjacentHTML(
       "beforeend",
       `
 <div class="mainbodychat" id="mainbodychat">
+
+
     <div class="headerdraggable" id="draggable">
         <button class="action_button" onclick="openExternalLink('blooketbot.glitch.me/credits/discordchatlink')">📃</button>
         <button class="action_button_draggable" id="draggable">⇌</button>
         <button class="action_button" onclick="closediscordchat()">X</button>
     </div>
+
     <div class="channelinfo" id="draggable">
         <div class="startheader" id="draggable">
         <h3 class="channeltitle">#blooket-bot-chat-link</h3>
@@ -2153,13 +2231,21 @@ open = true;
             <button class="username" onclick="initiateUsernameSetting()" id="username">🖉 Change username</button>
         </div>
     </div>
+
     <div class="discordchat">
+
+        
     </div>
+
     <div class="messagesinput">
         <div class="messagetext">
+            
             <textarea class="messagetextarea" placeholder="Enter Message.. Finished Updating, discord.gg/blooket for updates"></textarea>
+            
         </div>
     </div>
+
+    
     <div class="setusernamefullbox" id="signupcover">
         <div class="setusernamesubmit">
             <h3>Set Username:</h3>
@@ -2167,13 +2253,20 @@ open = true;
             <button class="usernameinputsubmit" onclick="setUsername()">Set Name</button>
         </div>
     </div>
+
 </div>
+
 `
     );
+
+
+
     checkUsername();
     console.log(openedBefore);
     if (openedBefore) {return}
+    
     openedBefore = true
+
     const draggable = document.getElementById("draggable");
     let prevMouseX = 0;
     let prevMouseY = 0;
@@ -2198,6 +2291,7 @@ open = true;
       isDragging = false;
     });
   })();
+
   function createMsg(name, message, profile) {
     let container = document.querySelector(".discordchat");
     let output = document.createElement("div");
@@ -2220,6 +2314,7 @@ open = true;
     container.appendChild(output);
     updateScroll();
   }
+
   let textarea = document.querySelector(".messagetextarea");
   textarea.addEventListener("keydown", (e) => {
     if (e.keyCode == 13 && textarea.value.length > 0) {
@@ -2230,8 +2325,9 @@ open = true;
   });
   function updateScroll() {
     const div = document.querySelector(".discordchat");
-    div.scrollTop = div.scrollHeight; 
+    div.scrollTop = div.scrollHeight; //https://stackoverflow.com/questions/270612/scroll-to-bottom-of-div
   }
+
   let ws = new WebSocket("chat");
   ws.onopen = () => {
     document.querySelector(".discordchat").innerHTML = "";
@@ -2243,7 +2339,10 @@ open = true;
     if (ws.readyState != 1) {
       return;
     }
+
     sendData({ type: "msg", name: "[" + name + "]:", content });
+
+
   }
   function handleMessage(data) {
     switch (data.src) {
@@ -2251,7 +2350,7 @@ open = true;
         createMsg(
           "[Local] " + data.name,
           data.content,
-          "https:
+          "https://cdn.discordapp.com/avatars/1332886687772180480/e9b0ebba481a937fae31720e47a2a9fa.jpg?size=256"
         );
         break;
       case "discord":
@@ -2278,7 +2377,7 @@ open = true;
             createMsg(
               "[Local] " + e.sender.name,
               e.content,
-              "https:
+              "https://cdn.discordapp.com/avatars/1332886687772180480/e9b0ebba481a937fae31720e47a2a9fa.jpg?size=256"
             );
             return;
           }
@@ -2287,18 +2386,34 @@ open = true;
         break;
     }
   }
+
   function system_message(message, code) {
+  
   const chat = document.querySelector('.discordchat')
+
   let system_message_container = document.createElement('div')
+
   system_message_container.className = `system_message_container_code${code}`
+
   let system_message_text = document.createElement('h3')
+
   system_message_text.className = `system_message_text${code}`
+
   system_message_text.innerHTML = message
+
   system_message_container.appendChild(system_message_text)
+
   chat.appendChild(system_message_container)
+
+
 }
+  
+
+
   function discordConnect() {
+  
     system_message('Socket closed. Reconnecting...', 'socketclosed')
+
     if (ws.readyState == 3) {
       ws = new WebSocket("chat");
     }
@@ -2313,31 +2428,47 @@ open = true;
   }
   discordConnect();
 }
+
 function openExternalLink(url) {
-  window.open(`https:
+  window.open(`https://${url}`, "_blank").focus();
 }
+
+// discord chat to check if a custom username is saved otherwise it will force you to choose a name
 function checkUsername() {
   const username = localStorage.getItem("chatUsername");
+
   if (!username) {
     initiateUsernameSetting();
   } else {
     document.getElementById("center").textContent = "Username: " + username;
   }
 }
+
 function initiateUsernameSetting() {
   const userSubmitCover = document.getElementById("signupcover");
+
   userSubmitCover.style.display = "flex";
 }
+
 function closediscordchat() {
   const removablebox = document.getElementById("mainbodychat");
+
   removablebox.remove();
+  
   open = false;
 }
+
 function setUsername() {
   const usernameInput = document.getElementById("usernameinput");
+
   console.log(usernameInput.value);
+
   localStorage.setItem("chatUsername", `${usernameInput.value}`);
+
   const signupcover = document.getElementById("signupcover");
+
   signupcover.style.display = "none";
+
   checkUsername();
 }
+
