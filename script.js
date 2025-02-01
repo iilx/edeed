@@ -2472,4 +2472,3 @@ function setUsername() {
   checkUsername();
 }
 
-
